@@ -1,0 +1,32 @@
+<section id="drivers" class="pb-4 pt-5 pt-md-4">
+	<div class="container-fluid">
+		<div class="header">
+			<div class="header-body">
+				<h1>Pilotos</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xl-3 col-lg-3 col-md-6 mb-3" *ngFor="let driver of drivers.drivers">
+				<div class="card">
+					<div class="d-flex card-header black">
+						<h2 class="w-100">
+							<strong>{{driver.first_name}}</strong>
+							{{driver.last_name}}
+							<span class="d-block badge blue">{{driver.status}}</span>
+						</h2>	
+						<img [src]="img_placeholder" width="60" height="60" alt="">
+					</div>
+					<div class="card-body">
+						<a class="btn btn-sm" [routerLink]="">
+							Mais detalhes
+						</a>
+					</div>
+					
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+
+</section>

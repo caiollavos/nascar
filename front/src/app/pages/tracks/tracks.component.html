@@ -1,0 +1,53 @@
+<section id="tracks" class="pb-4 pt-5 pt-md-4">
+  <div class="container-fluid">
+    <div class="header">
+     
+        <div class="header-body">
+          <h1>Circuitos</h1>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 mb-3" *ngFor="let track of tracks; let i = index;">
+        <div class="card card-stats mb-4 mb-xl-0" 
+          [ngStyle]="{
+              'background-image': 'url(./assets/img/theme/bg-tracks.jpg)',
+              'background-position': 'center',
+              'background-size': 'cover'
+          }"> 
+          <div class="card-body">
+            
+            <div class="row">
+              <div class="col">
+                <h5 class="card-title text-uppercase text-muted mb-0">{{track.name}}</h5>
+                <span class="h2 font-weight-bold mb-0">{{track.distance}} <small>milhas</small></span>
+              </div>
+              <div class="col-auto">
+                <div class="icon icon-shape bg-custom-yellow text-white rounded-circle shadow">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+              </div>
+            </div>
+
+            <p class="mt-3 mb-0 text-muted">
+              <span class="text-success mr-2"><i class="fas fa-map-marker-alt"></i></span>
+              <span class="text-nowrap">{{track.city}} - {{track.state}} / {{track.country}}</span>
+              <!-- <button (click)="myItem(track.id, track)">getId</button> -->
+            </p>
+
+            <div class="row">
+              <div class="col">
+                <a [routerLink]="['/tracks/', track.id]" class="btn btn-default  btn-block btn-sm mt-2">Detalhes da pista</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+   
+    <!-- <div class="container-fluid mt--7">
+        
+    </div> -->
+</section>

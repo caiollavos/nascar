@@ -1,0 +1,107 @@
+<section id="details">
+	<div>
+		<div *ngIf="currentTrack" class="header pb-8 pt-5 pt-md-8" [ngStyle]="{
+			'background-image': 'url('+ currentTrack.img +')',
+			'background-position': 'bottom center',
+			'background-size': 'cover'
+					}">
+					
+			<div class="container-fluid">
+				<div class="header-body">
+					<h1>{{currentTrack.name}}</h1>
+					<h3>
+						<span>{{currentTrack.city}} - {{currentTrack.country}}</span>
+					</h3>
+					<h5>
+						Proprietário:
+						<span>{{this.currentTrack.owner}}</span>
+					</h5>
+	
+				</div>
+			</div>
+		</div>
+		
+		<div class="container-fluid mt--7">
+			<div *ngIf="currentTrack" class="row">		
+				<div class="col-xl-8 col-lg-8 mb-3" id="track-info">
+					<div class="card">
+						<div class="wrapper">
+							<div class="header">Características</div>
+	
+							<div class="banner-img">
+								<div *ngIf="currentTrack.svg === null" class="placeholder">
+									<i class="fa fa-image" aria-hidden="true"></i>
+									<h3>Infelizmente não encontramos uma imagem deste circuito.</h3>
+								</div>
+								<img *ngIf="currentTrack.svg != null" class="track-img" [src]="currentTrack.svg" alt="">
+							</div>
+	
+							<div class="stats">
+	
+								<div>
+									<strong>Tipo</strong> {{this.currentTrack.track_type}}
+								</div>
+	
+								<div>
+									<strong>Superfície</strong> {{this.currentTrack.surface}}
+								</div>
+	
+								<div>
+									<strong>Formato</strong> {{this.currentTrack.shape}}
+								</div>
+	
+							</div>
+	
+							<div class="stats">
+	
+								<div>
+									<strong>Distância</strong> {{this.currentTrack.distance}} M
+								</div>
+	
+								<div>
+									<strong>Front Strech</strong> {{this.currentTrack.frontstretch}}
+								</div>
+	
+								<div>
+									<strong>back Strech</strong> {{this.currentTrack.backstretch}}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- <div class="col-xl-4 col-lg-4 mb-3" id="weather" *ngFor="let item of this.currentTrack.weather"> -->
+					<div class="col-xl-4 col-lg-4 mb-3" id="weather">	
+					<div class="card">
+						<div class="front">
+							<div class="location">{{this.currentTrack.city}} - {{this.currentTrack.state}}</div>
+							<div class="d-flex w-100">
+
+							</div>
+							
+							<div class="weather d-flex">
+								<h1>18<sup>o</sup></h1>
+								<i class="flex-shrink-1 fa fa-cloud" aria-hidden="true"></i>
+								<!-- <h1>{{item.Temperature.Metric.Value}}<sup>o</sup><br><span>Hoje</span></h1> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="container-fluid mt--7"> -->
+				<div class="row">
+					<div class="col-xl-12 col-lg-12">
+						<div class="card">
+							<div #map class="map"></div>
+						</div>
+					</div>
+				</div>
+			<!-- </div> -->
+		</div>
+
+	</div>
+	
+	
+	
+	
+</section>
+

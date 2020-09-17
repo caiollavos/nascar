@@ -1,0 +1,15 @@
+$yellow:#efcc00;
+$blue: #447bbc;
+
+#tracks {
+    // h1 {color: $yellow}
+    .card-body {
+        min-height: 160px;
+        .h2 {
+            color: $yellow;
+        }
+        .bg-custom-yellow {
+            background-color: $yellow;
+        }
+    }
+}
